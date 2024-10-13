@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int find_total_odd(int *arr,int size)
+{
+    int total = 0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]%2 == 1 )
+            {
+                total = total + arr[i];
+            }
+    }
+    return total;
+}
+int main()
+{
+    int T ;
+    scanf("%d",&T);
+    for(int i =0 ; i < T ; i++)
+    {
+        int total =0;
+        int *arr;
+        int num;
+        arr = (int *)malloc(10*sizeof(int));
+        for(int i = 0 ; i < 10;i++){
+            scanf("%d",&arr[i]);
+        }
+        total = find_total_odd(arr,10);
+        printf("#%d ",i+1);
+        printf("%d\n",total);
+        free(arr);
+    }
+}
